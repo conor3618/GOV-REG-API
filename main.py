@@ -35,12 +35,8 @@ def print_result(reg: str, data: dict) -> None:
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(
-        description="Look up Irish vehicle registration and motor tax details."
-    )
-    parser.add_argument(
-        "registration", nargs="?", help="Vehicle registration number, e.g. 241D38103"
-    )
+    parser = argparse.ArgumentParser(add_help=False)
+    parser.add_argument("registration", nargs="?")
     args = parser.parse_args()
 
     registration = args.registration or input("Enter vehicle registration: ")
